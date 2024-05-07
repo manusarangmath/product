@@ -1,0 +1,15 @@
+
+<div *ngIf="product">
+    <h2>Delete Product</h2>
+    <form (ngSubmit)="deleteProduct()">
+      <!-- Input fields for editing product details -->
+      <div>
+        <label for="productCode">Product Code:</label>
+        <input type="text" id="productCode" name="productCode" [(ngModel)]="product.productCode" required maxlength="20">
+      </div>
+      <!-- Add other input fields for editing product details -->
+      <button type="submit">deleteProduct</button>
+      
+    </form>
+  </div>
+  

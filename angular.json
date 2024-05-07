@@ -35,11 +35,21 @@
               "src/assets"
             ],
             "styles": [
+              "node_modules/primeng/resources/themes/lara-light-blue/theme.css",
+              "node_modules/primeng/resources/primeng.min.css",
+
+              "node_modules/bootstrap/dist/css/bootstrap.min.css",
+
               "src/styles.css"
             ],
             "scripts": [],
+            
+
+            
             "server": "src/main.server.ts",
+            
             "prerender": true,
+            
             "ssr": {
               "entry": "server.ts"
             }
@@ -78,7 +88,10 @@
               "buildTarget": "angular-product-app1:build:development"
             }
           },
-          "defaultConfiguration": "development"
+          "defaultConfiguration": "development",
+          "options": {
+            "proxyConfig": "proxy.conf.json"
+          }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
@@ -106,5 +119,8 @@
         }
       }
     }
+  },
+  "cli": {
+    "analytics": "eece7a2e-e798-4b71-881f-7945e5fd7efd"
   }
 }

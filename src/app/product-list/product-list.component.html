@@ -1,0 +1,50 @@
+<!-- Search bar -->
+
+
+<input class="form-control mr-sm-2" type="search" placeholder="Search" [(ngModel)]="searchTerm" (ngModelChange)="applyFilterAndSort()" aria-label="Search">
+
+<!-- Products List -->
+<h2>Products List</h2>
+<div class="table-responsive">
+  <p-table [value]="pageProducts" [paginator]="true" [rows]="5" [rowsPerPageOptions]="[5,10,15]" >
+    <ng-template pTemplate="header">
+      <tr>
+        <th (click)="sortProducts('productCode')">Product Code</th>
+        <th (click)="sortProducts('intrialMean')">Intrial Mean</th>
+        <th (click)="sortProducts('intrialMax')">Intrial Max</th>
+        <th (click)="sortProducts('metricMean')">Metric Mean</th>
+        <th (click)="sortProducts('metricMax')">Metric Max</th>
+        <th (click)="sortProducts('units')">Units</th>
+        <th (click)="sortProducts('createdBy')">Created By</th>
+        <th (click)="sortProducts('modifiedBy')">Modified By</th>
+        <th (click)="sortProducts('productDate')">Product Date</th>
+        <th (click)="sortProducts('active')">Active</th>
+        <th>Actions</th>
+      </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-product>
+      <tr>
+        <td>{{ product.productCode }}</td>
+        <td>{{ product.intrialMean }}</td>
+        <td>{{ product.intrialMax }}</td>
+        <td>{{ product.metricMean }}</td>
+        <td>{{ product.metricMax }}</td>
+        <td>{{ product.units }}</td>
+        <td>{{ product.createdBy }}</td>
+        <td>{{ product.modifiedBy }}</td>
+        <td>{{ product.productDate }}</td>
+        <td>{{ product.active }}</td>
+        <td>
+          <div class="btn-group">
+            <button (click)="editProduct(product.productId)" class="btn btn-success">Update</button>
+            <button (click)="deleteProductid(product.productId)" class="btn btn-danger ml-3">Delete</button>
+          </div>
+        </td>
+      </tr>
+    </ng-template>
+  </p-table>
+  
+</div>
+
+<!-- Download Excel Button -->
+<button class="btn btn-primary" (click)="downloadExcel()">Download Excel</button>

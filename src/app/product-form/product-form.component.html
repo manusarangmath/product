@@ -1,0 +1,59 @@
+<form (ngSubmit)="submitForm()" #productForm="ngForm">
+    <div>
+      <label for="productCode">Product Code:</label>
+      <input type="text" id="productCode" name="productCode" 
+      [(ngModel)]="productCode" required maxlength="20">
+    </div>
+  
+    <div>
+      <label for="initialMeanValue">Initial Mean Value:</label>
+      <input type="number" id="initialMeanValue" name="initialMeanValue" 
+      [(ngModel)]="initialMeanValue" required step="0.01">
+    </div>
+  
+    <div>
+      <label for="initialMaxValue">Initial Max Value:</label>
+      <input type="number" id="initialMaxValue" name="initialMaxValue" 
+      [(ngModel)]="initialMaxValue" required step="0.01">
+    </div>
+  
+    <div>
+      <label for="metricMeanValue">Metric Mean Value:</label>
+      <input type="number" id="metricMeanValue" name="metricMeanValue" 
+      [(ngModel)]="metricMeanValue" required step="0.01">
+    </div>
+  
+    <div>
+      <label for="metricMaxValue">Metric Max Value:</label>
+      <input type="number" id="metricMaxValue" name="metricMaxValue" 
+      [(ngModel)]="metricMaxValue" required step="0.01">
+    </div>
+  
+    <div>
+      <label for="units">Units:</label>
+      <input type="text" id="units" name="units" 
+      [(ngModel)]="units" required maxlength="10">
+    </div>
+    <div>
+      <label for=" createdBy"> createdBy:</label>
+      <input type="number" id=" createdBy" name=" createdBy" 
+      [(ngModel)]=" createdBy" required step="0.01">
+    </div>
+    <div>
+      <label for=" modifiedBy"> modifiedBy:</label>
+      <input type="number" id=" modifiedBy" name=" modifiedBy" 
+      [(ngModel)]=" modifiedBy" required step="0.01">
+    </div>
+    <div>
+      <label for="productDate">productDate:</label>
+      <input type="number" id="productDate" name="productDate" 
+      [(ngModel)]="productDate" required step="0.01">
+    </div>
+  
+    <div>
+      <label for="isActive">Is Active:</label>
+      <input type="checkbox" id="isActive" name="isActive" [(ngModel)]="isActive">
+    </div>
+  
+    <button type="submit">Submit</button>
+  </form>

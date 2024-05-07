@@ -1,0 +1,53 @@
+<div *ngIf="product">
+  <h2>Edit Product</h2>
+  <form (ngSubmit)="saveProduct()">
+    <!-- Input fields for editing product details -->
+    <div class="row">
+      <div class="col-md-6">
+        <div class="form-group">
+          <label for="productCode">Product Code:</label>
+          <input type="text" id="productCode" name="productCode" [(ngModel)]="product.productCode" class="form-control" required maxlength="20">
+        </div>
+        <div class="form-group">
+          <label for="initialMeanValue">Initial Mean Value:</label>
+          <input type="number" id="initialMeanValue" name="initialMeanValue" [(ngModel)]="product.intrialMean" class="form-control" required step="0.01">
+        </div>
+        <div class="form-group">
+          <label for="initialMaxValue">Initial Max Value:</label>
+          <input type="number" id="initialMaxValue" name="initialMaxValue" [(ngModel)]="product.intrialMax" class="form-control" required step="0.01">
+        </div>
+        <div class="form-group">
+          <label for="metricMeanValue">Metric Mean Value:</label>
+          <input type="number" id="metricMeanValue" name="metricMeanValue" [(ngModel)]="product.metricMean" class="form-control" required step="0.01">
+        </div>
+        <div class="form-group">
+          <label for="metricMaxValue">Metric Max Value:</label>
+          <input type="number" id="metricMaxValue" name="metricMaxValue" [(ngModel)]="product.metricMax" class="form-control" required step="0.01">
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="form-group">
+          <label for="units">Units:</label>
+          <input type="text" id="units" name="units" [(ngModel)]="product.units" class="form-control" required maxlength="10">
+        </div>
+        <div class="form-group">
+          <label for="createdBy">Created By:</label>
+          <input type="date" id="createdBy" name="createdBy" [(ngModel)]="product.createdBy" class="form-control" required>
+        </div>
+        <div class="form-group">
+          <label for="modifiedBy">Modified By:</label>
+          <input type="date" id="modifiedBy" name="modifiedBy" [(ngModel)]="product.modifiedBy" class="form-control" required>
+        </div>
+        <div class="form-group">
+          <label for="productDate">Product Date:</label>
+          <input type="date" id="productDate" name="productDate" [(ngModel)]="product.productDate" class="form-control" required>
+        </div>
+        <div class="form-group">
+          <label for="isActive">Is Active:</label>
+          <input type="checkbox" id="isActive" name="isActive" [(ngModel)]="product.active" class="form-check-input">
+        </div>
+      </div>
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+</div>
